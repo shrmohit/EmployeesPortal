@@ -1,0 +1,71 @@
+﻿@model EmployeesPortal.Models.Entities.Employee
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+
+    <div class="card shadow-lg border-0" style="width: 850px;">
+
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">Employee Details</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div class="col-10 gy-4">
+
+                <div class="col-md-6">
+                    <div class="text-muted small">Employee Name</div>
+                    <div class="fs-5 fw-semibold">@Model.EmployeeName</div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="text-muted small">Email</div>
+                    <div class="fs-5 fw-semibold">@Model.Email</div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="text-muted small">Department</div>
+                    <div class="fs-5 fw-semibold">@Model.Department</div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="text-muted small">Employee ID</div>
+                    <div class="fs-5 fw-semibold">@Model.EmployeeId</div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="text-muted small">Age</div>
+                    <div class="fs-5 fw-semibold">@Model.Age</div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="text-muted small">Gender</div>
+                    <div class="fs-5 fw-semibold">@Model.Gender</div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="text-muted small">Phone Number</div>
+                    <div class="fs-5 fw-semibold">@Model.PhoneNumber</div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="text-muted small">Salary</div>
+                    <div class="fs-5 fw-semibold text-success">₹ @Model.Salary</div>
+                </div>
+
+            </div>
+
+            <hr class="mt-4" />
+
+            <div class="d-flex justify-content-start">
+                <a asp-action="EmployeesData" class="btn btn-outline-secondary">
+                    ← Back to List
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
