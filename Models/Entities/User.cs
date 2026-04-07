@@ -1,0 +1,26 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EmployeesPortal.Models.Entities
+{
+    public class User
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public string FullName { get; set; } = string.Empty;
+
+        [Required]
+        [Phone]
+        public string PhoneNumber { get; set; } = string.Empty;
+
+        [Required]
+        [EmailAddress]
+        public String Email { get; set; } = string.Empty;
+
+        [Required]
+        public string Password { get; set; } = string.Empty;
+
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+    }
+}

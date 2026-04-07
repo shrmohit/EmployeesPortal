@@ -1,0 +1,28 @@
+Perfect Mohit 🔥 — ab main tumhe step-by-step exact process bata raha hoon jisse:
+
+✅ Tumhara project GitHub pe push ho
+✅ Repo open karte hi Student_Management_System folder structure properly show ho
+
+🚀 STEP-BY-STEP: Code push to GitHub
+🔹 Step 1: Terminal open karo (Project folder ke andar)
+
+👉 Ensure karo tum same folder me ho jahan .csproj file hai
+
+Example:
+
+StudentManagementAPI/
+ ├── Controllers/
+ ├── Models/
+ ├── Program.cs
+ ├── StudentManagementAPI.csproj ✅ (important)
+🔹 Step 2: Git initialize karo
+git init
+🔹 Step 3: Remote add karo (tumhara GitHub repo)
+git remote add origin https://github.com/shrmohit/Student_Management_System.git
+🔹 Step 4: Files add karo
+git add .
+🔹 Step 5: Commit karo
+git commit -m "Initial commit - Student Management System"
+🔹 Step 6: Branch set karo
+git branch -M main
+🔹 Step 7: Push karo 🚀

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using EmployeesPortal.Models.Entities;
 using EmployeesPortal.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EmployeesPortal.Controllers
 {
@@ -11,10 +12,14 @@ namespace EmployeesPortal.Controllers
     [ApiController]
     public class EmployeesApiController : ControllerBase
     {
-        public readonly IEmployeeService service;
-        public EmployeesApiController(IEmployeeService service)
+        private readonly IEmployeeService service;
+        private readonly ILogger<EmployeesApiController> logger;
+
+        public EmployeesApiController(IEmployeeService service , ILogger<EmployeesApiController> logger)
         {
             this.service = service;
+            this.logger = logger;
+
         }
 
         
@@ -35,10 +40,12 @@ namespace EmployeesPortal.Controllers
         }
 
         [HttpGet("GetAllEmployee")]
+        [Authorize]
         public async Task<IActionResult> GetAllEmployee()
         {
             try
             {
+                logger.LogInformation("you are unauthorized");
                 var employeelist = await service.GetEmployeesAsync();
                 return Ok(employeelist);
             }
